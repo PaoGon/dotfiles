@@ -1,0 +1,46 @@
+command_timeout = 1000
+
+
+[character]
+success_symbol = "[](bold green) "
+error_symbol = "[✗](bold red) "
+
+[git_status]
+up_to_date = "[](bold green)"
+untracked = "? "
+ahead = "⇡${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+behind = "⇣${count} "
+conflicted = "= "
+stashed = "$ "
+modified = "! "
+staged = "+ "
+renamed = "» "
+deleted = "✘ "
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = " (bold green)"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+merge = "[](bold red)"
+
+
+[java]
+symbol = "[ ](124 bold)"
+
+[lua]
+symbol = "[ ](109 bold)"
+
+[dart]
+symbol = "[ ](24 bold)"
+
+[python]
+symbol = "[ ](166 bold)"
+pyenv_version_name = true
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+
+[php]
+symbol = "[ ](132 bold)"
+
