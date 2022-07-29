@@ -7,9 +7,9 @@ error_symbol = "[✗](bold red) "
 
 [git_status]
 up_to_date = "[](bold green)"
-untracked = "? "
-ahead = "⇡${count} "
-diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count} "
 conflicted = "= "
 stashed = "$ "

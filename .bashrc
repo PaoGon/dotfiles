@@ -1,3 +1,12 @@
+#    ██                        ██                    
+#   ░██                       ░██                    
+#   ░██       ██████    ██████░██      ██████  █████ 
+#   ░██████  ░░░░░░██  ██░░░░ ░██████ ░░██░░█ ██░░░██
+#   ░██░░░██  ███████ ░░█████ ░██░░░██ ░██ ░ ░██  ░░ 
+# ██░██  ░██ ██░░░░██  ░░░░░██░██  ░██ ░██   ░██   ██
+#░██░██████ ░░████████ ██████ ░██  ░██░███   ░░█████ 
+#░░ ░░░░░    ░░░░░░░░ ░░░░░░  ░░   ░░ ░░░     ░░░░░  
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -119,7 +128,7 @@ fi
 
 # pokemon
 gen_poke(){
-    pokemon=("hoothoot" "larvitar" "wartortle" "cyndaquil" "shellder" "aron" "totodile" "psyduck") 
+    pokemon=("hoothoot" "minccino" "dratini" "marill" "skitty" "togepi" "larvitar" "wartortle" "cyndaquil" "aron" "totodile" "psyduck" "emolga" "haunter" "jigglypuff" "marowak") 
     pokemon-colorscripts -n "${pokemon[$((RANDOM%${#pokemon[@]}))]}"
 }
 gen_poke
@@ -149,6 +158,8 @@ gen_make(){
 set -o vi
 bind '"jj":vi-movement-mode'
 
+set -o ignoreeof    # shell only exits after 10 consecutive ctrl+d
+
 # windows shortcut aliases
 alias naut='nautilus .'
 alias so='source'
@@ -172,7 +183,7 @@ alias pyvenv='source venv/bin/activate'
 alias ard-cli='arduino-cli'
 
 
-alias cat='batcat --theme ansi-dark'
+alias cat='bat --theme gruvbox-dark'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -225,22 +236,62 @@ elif type compctl &>/dev/null; then
   compctl -K __flutter_completion flutter
 fi
 
+
+
 ###-end-flutter-completion-###
 
 ## Generated 2021-12-22 13:43:15.037009Z
 ## By /home/gon/snap/flutter/common/flutter/bin/cache/flutter_tools.snapshot
 
 # setting JRE environment path
-JAVA_HOME=/usr/lib/jvm/jdk-11
-PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME=/usr/lib/jvm/jdk-11
+export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
 
-export JAVA_HOME
-
-export JRE_HOME
+#JAVA_HOME
+#JRE_HOME
 
 
 # Android 
-export ANDROID_SDK_ROOT=/opt/android-sdk/cmdline-tools/latest/
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export ANDROID_HOME=/home/gon/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
 
+
+
+export PATH=$PATH:/home/gon/bb
+
+
+# Lua lua-language-server
+export PATH=$PATH:/home/gon/lua-language-server/bin
+
+# lazygit
+export PATH=$PATH:/home/gon/go/bin
+
+
+#export ANDROID_HOME=/home/gon/android-sdk
+#export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
+#export PATH=$PATH:$ANDROID_HOME/platform-tools/
+#export PATH=$PATH:$ANDROID_HOME/build-tools
+
+#export ANDROID_SDK_ROOT=/opt/android-sdk/cmdline-tools/latest/
+#export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+
+#gitbare repo
 alias config='/usr/bin/git --git-dir=/home/gon/dotfiles/ --work-tree=/home/gon'
+
+alias luamake=/home/gon/lua-language-server/3rd/luamake/luamake
+
+
+#calendar aliases
+alias jan='cal -m 01'
+alias feb='cal -m 02'
+alias mar='cal -m 03'
+alias apr='cal -m 04'
+alias may='cal -m 05'
+alias jun='cal -m 06'
+alias jul='cal -m 07'
+alias aug='cal -m 08'
+alias sep='cal -m 09'
+alias oct='cal -m 10'
+alias nov='cal -m 11'
+alias dec='cal -m 12'
